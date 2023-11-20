@@ -1,45 +1,36 @@
-import { Metadata } from 'next';
-import * as React from 'react';
+import { Baloo_2 } from 'next/font/google';
+import localFont from 'next/font/local';
 
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
 
-import { siteConfig } from '@/constant/config';
+import { NavBar } from '@/components';
 
-// !STARTERCONF Change these default meta
-// !STARTERCONF Look at @/constant/config to change them
-export const metadata: Metadata = {
-  metadataBase: new URL('https://tuesdaycleaning.com'),
-  title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
-  },
-  description: siteConfig.description,
-  robots: { index: true, follow: true },
-
-  icons: {
-    icon: '/favicon/favicon.ico',
-    shortcut: '/favicon/favicon-16x16.png',
-    apple: '/favicon/apple-touch-icon.png',
-  },
-  manifest: `/favicon/site.webmanifest`,
-  openGraph: {
-    url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
-    images: [`${siteConfig.url}/images/og.jpg`],
-    type: 'website',
-    locale: 'en_US',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
-    images: [`${siteConfig.url}/images/og.jpg`],
-  },
+export const metadata = {
+  title: 'The Cleaning Company',
+  description: 'The Cleaning Company',
 };
+
+const Galyon = localFont({
+  src: [
+    {
+      path: '../styles/fonts/Galyon-Book.otf',
+      style: 'normal',
+    },
+    {
+      path: '../styles/fonts/Galyon-Bold.otf',
+      style: 'normal',
+    },
+  ],
+  variable: '--galyon',
+});
+
+const Baloo2 = Baloo_2({
+  weight: ['400', '500', '600', '700', '800'],
+  // display: 'swap',
+  subsets: ['latin-ext'],
+  style: ['normal'],
+  variable: '--baloo-2',
+});
 
 export default function RootLayout({
   children,
@@ -47,8 +38,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <body>{children}</body>
+    <html lang='en' className={`${Baloo2.variable} ${Galyon.variable}`}>
+      <body>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
