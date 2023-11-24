@@ -26,7 +26,7 @@ export function DatePickerDemo() {
           {date ? (
             format(date, 'PPP')
           ) : (
-            <span className='font-balloo_2 text-base text-purple-500'>
+            <span className='font-balloo_2 xxl:text-base text-sm text-purple-500'>
               Pick a date
             </span>
           )}

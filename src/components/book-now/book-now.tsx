@@ -29,7 +29,6 @@ const BookNow = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<FormData>();
   const onSubmit: SubmitHandler<FormData> = (data) => console.log(data);
@@ -82,7 +81,7 @@ const BookNow = () => {
         <div>
           <label
             htmlFor='date'
-            className='font-balloo_2 flex  flex-col gap-1 font-bold capitalize text-purple-500'
+            className='font-balloo_2 xxl:text-base flex flex-col gap-1 text-sm font-bold capitalize text-purple-500'
           >
             date
           </label>
@@ -91,8 +90,8 @@ const BookNow = () => {
         <BookNowBtn />
       </div>
       <div className='mt-6 text-blue-400'>
-        <p className='text-xl font-bold'>4.8/5</p>
-        <p>with over 1423 reviews</p>
+        <p className='xxl:text-xl text-base font-bold'>4.8/5</p>
+        <p className='xxl:text-base text-sm'>with over 1423 reviews</p>
       </div>
     </form>
   );

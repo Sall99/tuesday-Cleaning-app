@@ -30,7 +30,7 @@ export const Input: FC<InputProps> = ({
     <div className='mt-8 flex flex-col gap-1'>
       <label
         htmlFor={name}
-        className='font-balloo_2  font-bold capitalize text-purple-500'
+        className='font-balloo_2 xxl:text-base text-sm  font-bold capitalize text-purple-500'
       >
         {label}
       </label>
@@ -42,7 +42,7 @@ export const Input: FC<InputProps> = ({
         required={required}
         {...register(name, { required: `${label} is required` })}
         className={clsx(
-          'w-_270 font-galyon h-_50 rounded-lg border-2 border-gray-300 fill-gray-400 px-3 py-2 font-normal text-blue-300 placeholder:text-purple-500',
+          'w-_270 font-galyon h-_50 xxl:text-base rounded-lg border-2 border-gray-300 fill-gray-400 px-3 py-2 text-sm font-normal text-blue-300 placeholder:text-purple-500',
           error ? 'show-input-shake border-red-500' : '',
           width ? `w-_${width}` : ''
         )}
@@ -91,7 +91,7 @@ export const InputNumber: FC<InputProps> = ({
     <div className='mt-8 flex flex-col gap-1'>
       <label
         htmlFor={name}
-        className='font-balloo_2  font-bold capitalize text-purple-500'
+        className='font-balloo_2 xxl:text-base text-sm font-bold capitalize text-purple-500'
       >
         {label}
       </label>
@@ -105,7 +105,7 @@ export const InputNumber: FC<InputProps> = ({
           value={inputValue}
           {...register(name, { required: `${label} is required` })}
           className={clsx(
-            'font-galyon h-_50 w-_82 rounded-lg border-2 border-gray-300 fill-gray-400 px-3 py-2 font-normal text-blue-300 placeholder:text-purple-500',
+            'font-galyon xxl:text-base h-_50 w-_82 rounded-lg border-2 border-gray-300 fill-gray-400 px-3 py-2 text-sm font-normal text-blue-300 placeholder:text-purple-500',
             error ? 'show-input-shake border-red-500' : ''
           )}
         />
