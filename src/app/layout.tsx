@@ -1,5 +1,4 @@
 import { Baloo_2 } from 'next/font/google';
-import localFont from 'next/font/local';
 
 import '@/styles/globals.css';
 
@@ -9,20 +8,6 @@ export const metadata = {
   title: 'The Cleaning Company',
   description: 'The Cleaning Company',
 };
-
-const Galyon = localFont({
-  src: [
-    {
-      path: '../styles/fonts/Galyon-Book.otf',
-      style: 'normal',
-    },
-    {
-      path: '../styles/fonts/Galyon-Bold.otf',
-      style: 'normal',
-    },
-  ],
-  variable: '--galyon',
-});
 
 const Baloo2 = Baloo_2({
   weight: ['400', '500', '600', '700', '800'],
@@ -38,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={`${Baloo2.variable} ${Galyon.variable}`}>
+    <html lang='en' className={`${Baloo2.variable}`}>
       <body>
         <NavBar />
         {children}

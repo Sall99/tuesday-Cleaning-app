@@ -17,7 +17,7 @@ const navLinks: NavLinks[] = [
   { name: 'Move In/Out Cleaning', href: '/move-in-out-cleaning' },
   {
     name: 'Quick Call',
-    href: '/quick-call',
+    href: '/',
     icon: '/svg/call.svg',
     color: '#FFF966',
   },
@@ -29,20 +29,20 @@ export const NavBar = () => {
         <Image src='/svg/Logo.svg' alt='logo' width={174.249} height={64} />
       </Link>
 
-      <ul className='gap-_30 flex'>
+      <ul className='gap-_30 flex items-center'>
         {navLinks.map(({ href, icon, color, name }) => (
           <li key={name}>
             <Link
               href={href}
               className={clsx(
-                'font-galyon flex gap-2',
+                'font-galyon flex gap-2 font-bold',
                 color
                   ? 'text-sm font-normal text-yellow-400 2xl:text-lg'
                   : 'text-white'
               )}
             >
-              <span>{name}</span>
-              {icon && <Image src={icon} alt={name} width={20} height={20} />}
+              <span className='font-bold'>{name}</span>
+              {icon && <Image src={icon} alt={name} width={16} height={16} />}
             </Link>
           </li>
         ))}
