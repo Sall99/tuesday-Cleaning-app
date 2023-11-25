@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { ShowCase } from '@/components';
+import { OurStory, ShowCase } from '@/components';
 
 const headText = 'Welcome to Tuesday Cleaning. "We Make Clean Fun!"';
 
@@ -15,7 +15,9 @@ export default function HomePage() {
         imageSrc='/images/showcase-home.png'
         headText={headText}
         subText={subText}
+        bottomText
       />
+      <OurStory />
     </main>
   );
 }

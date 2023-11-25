@@ -30,7 +30,7 @@ const ShowCase: FC<ShowCaseProps> = ({
   const [before, after] = headTextWithPlaceHolder.split(placeHolderHolder);
 
   return (
-    <div className='px-_150 2xl:px-_200 3xl:pr-_340  pb-_72 anime bg-purple-400 pt-16 text-white'>
+    <section className='px-_150 2xl:px-_200 3xl:pr-_340  pb-_72 anime bg-purple-400 pt-16 text-white'>
       <div className='flex justify-between gap-8'>
         <div className='flex-1'>
           {' '}
@@ -57,14 +57,17 @@ const ShowCase: FC<ShowCaseProps> = ({
         </div>
       </div>
 
-      <div className='mt-_72 xxl:text-4xl show-case-bottom-text m-auto flex flex-col items-center justify-center'>
-        <h2 className='font-bold text-yellow-400'>Get Your Clean On!</h2>
-        <p className='w-_600 anime xxl:text-2xl text-center text-purple-500'>
-          We're not your ordinary cleaning service – we're your clean freak best
-          friends dedicated to making your space shine, one neighbor at a time!
-        </p>
-      </div>
-    </div>
+      {bottomText && (
+        <div className='mt-_72 xxl:text-4xl show-case-bottom-text m-auto flex flex-col items-center justify-center'>
+          <h2 className='font-bold text-yellow-400'>Get Your Clean On!</h2>
+          <p className='w-_600 anime xxl:text-2xl text-center text-purple-500'>
+            We're not your ordinary cleaning service – we're your clean freak
+            best friends dedicated to making your space shine, one neighbor at a
+            time!
+          </p>
+        </div>
+      )}
+    </section>
   );
 };
 
