@@ -31,7 +31,7 @@ const BookNow = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FormData>();
-  const onSubmit: SubmitHandler<FormData> = (data) => {
+  const onSubmit: SubmitHandler<FormData> = () => {
     //
   };
 
