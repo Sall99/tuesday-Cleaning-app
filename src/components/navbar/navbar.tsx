@@ -24,7 +24,7 @@ const navLinks: NavLinks[] = [
 ];
 export const NavBar = () => {
   return (
-    <div className='py-_48 2xl:px-_200 px-_50 flex items-center justify-between gap-16 bg-purple-400 transition-all duration-300 ease-in-out'>
+    <div className='py-_48 2xl:px-_200 px-_50 anime flex items-center justify-between gap-16 bg-purple-400'>
       <Link href='/'>
         <Image src='/svg/Logo.svg' alt='logo' width={174.249} height={64} />
       </Link>
