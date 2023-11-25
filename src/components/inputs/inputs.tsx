@@ -2,6 +2,7 @@
 import clsx from 'clsx';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { FC, useEffect, useState } from 'react';
+import { RegisterOptions, UseFormRegisterReturn } from 'react-hook-form';
 
 import { cn } from '@/lib/utils';
 
@@ -12,7 +13,7 @@ interface InputProps {
   placeholder?: string;
   required?: boolean;
   error?: string;
-  register?: any;
+  register: (name: string, options?: RegisterOptions) => UseFormRegisterReturn;
   width?: number;
 }
 
@@ -36,7 +37,6 @@ export const Input: FC<InputProps> = ({
       </label>
       <input
         id={name}
-        name={name}
         type={type}
         placeholder={placeholder}
         required={required}
@@ -98,7 +98,6 @@ export const InputNumber: FC<InputProps> = ({
       <div className='relative'>
         <input
           id={name}
-          name={name}
           type={type}
           placeholder={placeholder}
           required={required}
