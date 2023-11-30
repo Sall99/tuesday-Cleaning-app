@@ -154,6 +154,17 @@ input[type='number']::-webkit-outer-spin-button {
   transition: all 0.3s ease-in-out;
 }
 
+/* Image Slider */
+.image-slider .image-slider-1 {
+  left: 144px;
+  top: -86px;
+}
+
+.image-slider .image-slider-0 {
+  left: -92px;
+  top: -146px;
+}
+
 /* KeyFrames */
 
 @keyframes animate-shake {
