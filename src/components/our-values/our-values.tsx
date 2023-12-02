@@ -1,5 +1,7 @@
+'use client';
+import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const cardData = [
   {
@@ -29,6 +31,15 @@ const cardData = [
 ];
 
 const OurValues = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start((i) => ({
+      opacity: 1,
+      transition: { delay: i * 0.3, duration: 0.5, ease: 'easeInOut' },
+    }));
+  }, [controls]);
+
   return (
     <div className='our-values flex bg-gray-500'>
       <div>
@@ -53,24 +64,28 @@ const OurValues = () => {
 
         <div>
           {cardData.map((card, index) => (
-            <div
-              className='w-_594 2xl:w-_696 rounded-_32 card mt-10 flex items-center gap-4 bg-gray-400 p-7 2xl:gap-7'
+            <motion.div
               key={index}
+              custom={index}
+              animate={controls}
+              initial={{ opacity: 0 }}
             >
-              <div className='rounded-_50 flex h-24 w-24 items-center justify-center border-[3.5px] border-purple-500 bg-gray-400 p-6'>
-                <div className='relative h-11 w-11'>
-                  <Image src={card.svg} alt='' fill />
+              <div className='w-_594 2xl:w-_696 rounded-_32 card mt-10 flex items-center gap-4 bg-gray-400 p-7 2xl:gap-7'>
+                <div className='rounded-_50 flex h-24 w-24 items-center justify-center border-[3.5px] border-purple-500 bg-gray-400 p-6'>
+                  <div className='relative h-11 w-11'>
+                    <Image src={card.svg} alt='' fill />
+                  </div>
+                </div>
+                <div className='ml-4'>
+                  <h3 className='text-base font-bold text-purple-400 2xl:text-2xl'>
+                    {card.title}
+                  </h3>
+                  <p className='text-sm text-purple-400 2xl:text-base'>
+                    {card.description}
+                  </p>
                 </div>
               </div>
-              <div className='ml-4'>
-                <h3 className='text-base font-bold text-purple-400 2xl:text-2xl'>
-                  {card.title}
-                </h3>
-                <p className='text-sm text-purple-400 2xl:text-base'>
-                  {card.description}
-                </p>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
