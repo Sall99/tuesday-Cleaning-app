@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { OurStory, ShowCase } from '@/components';
+import { OurStory, OurValues, ShowCase } from '@/components';
 
 const headText = 'Welcome to Tuesday Cleaning. "We Make Clean Fun!"';
 
@@ -18,6 +18,7 @@ export default function HomePage() {
         bottomText
       />
       <OurStory />
+      <OurValues />
     </main>
   );
 }

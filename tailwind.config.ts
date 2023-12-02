@@ -32,6 +32,7 @@ export default {
         },
         gray: {
           400: 'var(--color-gray-400)',
+          500: 'var(--color-gray-500)',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -69,9 +70,12 @@ export default {
       },
 
       borderRadius: {
+        _50: '50%',
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
         sm: 'calc(var(--radius) - 4px)',
+        _32: '32px',
+        _64: '64px',
       },
       keyframes: {
         'accordion-down': {
@@ -108,13 +112,19 @@ export default {
         _288: '288px',
         _302: '302px',
         _340: '340px',
+        _370: '370px',
         _405: '405px',
         _430: '430px',
+        _440: '440px',
         _505: '505px',
+        _540: '540px',
         _547: '547px',
         _579: '579px',
+        _589: '589px',
         _594: '594px',
         _600: '600px',
+        _696: '696px',
+        _1016: '1016px',
       },
     },
   },

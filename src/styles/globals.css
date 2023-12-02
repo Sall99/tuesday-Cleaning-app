@@ -16,6 +16,7 @@
 
   /* gray */
   --color-gray-400: var(--Universal-White, #fff);
+  --color-gray-500: rgba(235, 235, 255, 1);
 
   --background: 0 0% 100%;
   --foreground: 222.2 47.4% 11.2%;
@@ -163,6 +164,10 @@ input[type='number']::-webkit-outer-spin-button {
 .image-slider .image-slider-0 {
   left: -92px;
   top: -146px;
+}
+
+.our-values .card {
+  box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* KeyFrames */
