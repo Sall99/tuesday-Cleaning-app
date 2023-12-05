@@ -2,6 +2,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const cardData = [
   {
@@ -32,35 +33,52 @@ const cardData = [
 
 const OurValues = () => {
   const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+  });
 
   useEffect(() => {
-    controls.start((i) => ({
-      opacity: 1,
-      transition: { delay: i * 0.3, duration: 0.5, ease: 'easeInOut' },
-    }));
-  }, [controls]);
+    if (inView) {
+      controls.start((i) => ({
+        opacity: 1,
+        transition: { delay: i * 0.5, duration: 0.5, ease: 'easeInOut' },
+      }));
+    }
+  }, [controls, inView]);
 
   return (
-    <div className='our-values flex bg-gray-500'>
+    <section className='our-values flex bg-gray-500' ref={ref}>
       <div>
         <div className='w-_589 h-_1016 rounded-tr-_64 rounded-r-_64 relative bg-purple-500'>
           <div className='absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[30%] transform 2xl:translate-x-[10%]'>
-            <div className='w-_302 h-_440  2xl:w-_370 2xl:h-_540 rounded-_32 relative bg-yellow-400'>
-              <Image
-                src='/images/pngegg.png'
-                alt=''
-                fill
-                className='rounded-_32'
-              />
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={controls}
+              className='rounded-_32 overflow-hidden'
+            >
+              <div className='w-_302 h-_440  2xl:w-_370 2xl:h-_540 rounded-_32 relative bg-yellow-400'>
+                <Image
+                  src='/images/pngegg.png'
+                  alt=''
+                  fill
+                  className='rounded-_32'
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
       <div className='ml-44 mt-32'>
-        <h2 className='text-4xl font-bold text-purple-400'>Our values</h2>
-        <p className='mt-2 text-base font-bold text-purple-500 2xl:text-2xl'>
-          Turning Mess into Magnificence!
-        </p>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={controls}
+          className='overflow-hidden'
+        >
+          <h2 className='text-4xl font-bold text-purple-400'>Our values</h2>
+          <p className='mt-2 text-base font-bold text-purple-500 2xl:text-2xl'>
+            Turning Mess into Magnificence!
+          </p>
+        </motion.div>
 
         <div>
           {cardData.map((card, index) => (
@@ -89,7 +107,7 @@ const OurValues = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

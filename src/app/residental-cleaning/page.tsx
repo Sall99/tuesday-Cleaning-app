@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { CleaningVariety, ShowCase } from '@/components';
+import {
+  CleaningVariety,
+  RedisdentialCleaningServices,
+  ShowCase,
+} from '@/components';
 
 // SHOWCASE TEXT
 const headText =
@@ -32,6 +36,7 @@ const ResidentalCleaning = () => {
         description={description}
         images={images}
       />
+      <RedisdentialCleaningServices />
     </div>
   );
 };
