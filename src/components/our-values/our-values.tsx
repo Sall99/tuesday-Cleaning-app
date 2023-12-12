@@ -4,6 +4,8 @@ import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
+import OurCleaningServices from '@/components/our-cleaning-services';
+
 const cardData = [
   {
     svg: './svg/Star.svg',
@@ -47,66 +49,69 @@ const OurValues = () => {
   }, [controls, inView]);
 
   return (
-    <section className='our-values flex bg-gray-500' ref={ref}>
-      <div>
-        <div className='w-_589 h-_1016 rounded-tr-_64 rounded-r-_64 relative bg-purple-500'>
-          <div className='absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[30%] transform 2xl:translate-x-[10%]'>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={controls}
-              className='rounded-_32 overflow-hidden'
-            >
-              <div className='w-_302 h-_440  2xl:w-_370 2xl:h-_540 rounded-_32 relative bg-yellow-400'>
-                <Image
-                  src='/images/pngegg.png'
-                  alt=''
-                  fill
-                  className='rounded-_32'
-                />
-              </div>
-            </motion.div>
+    <section className='our-values bg-gray-500 pb-32' ref={ref}>
+      <div className='flex'>
+        <div>
+          <div className='w-_589 h-_1016 rounded-tr-_64 rounded-r-_64 relative bg-purple-500'>
+            <div className='absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[30%] transform 2xl:translate-x-[10%]'>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={controls}
+                className='rounded-_32 overflow-hidden'
+              >
+                <div className='w-_302 h-_440  2xl:w-_370 2xl:h-_540 rounded-_32 relative bg-yellow-400'>
+                  <Image
+                    src='/images/pngegg.png'
+                    alt=''
+                    fill
+                    className='rounded-_32'
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+        <div className='ml-44 mt-32'>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={controls}
+            className='overflow-hidden'
+          >
+            <h2 className='text-4xl font-bold text-purple-400'>Our values</h2>
+            <p className='mt-2 text-base font-bold text-purple-500 2xl:text-2xl'>
+              Turning Mess into Magnificence!
+            </p>
+          </motion.div>
+
+          <div>
+            {cardData.map((card, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                animate={controls}
+                initial={{ opacity: 0 }}
+              >
+                <div className='w-_594 2xl:w-_696 rounded-_32 card mt-10 flex items-center gap-4 bg-gray-400 p-7 2xl:gap-7'>
+                  <div className='rounded-_50 flex h-24 w-24 items-center justify-center border-[3.5px] border-purple-500 bg-gray-400 p-6'>
+                    <div className='relative h-11 w-11'>
+                      <Image src={card.svg} alt='' fill />
+                    </div>
+                  </div>
+                  <div className='ml-4'>
+                    <h3 className='text-base font-bold text-purple-400 2xl:text-2xl'>
+                      {card.title}
+                    </h3>
+                    <p className='text-sm text-purple-400 2xl:text-base'>
+                      {card.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
-      <div className='ml-44 mt-32'>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={controls}
-          className='overflow-hidden'
-        >
-          <h2 className='text-4xl font-bold text-purple-400'>Our values</h2>
-          <p className='mt-2 text-base font-bold text-purple-500 2xl:text-2xl'>
-            Turning Mess into Magnificence!
-          </p>
-        </motion.div>
-
-        <div>
-          {cardData.map((card, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              animate={controls}
-              initial={{ opacity: 0 }}
-            >
-              <div className='w-_594 2xl:w-_696 rounded-_32 card mt-10 flex items-center gap-4 bg-gray-400 p-7 2xl:gap-7'>
-                <div className='rounded-_50 flex h-24 w-24 items-center justify-center border-[3.5px] border-purple-500 bg-gray-400 p-6'>
-                  <div className='relative h-11 w-11'>
-                    <Image src={card.svg} alt='' fill />
-                  </div>
-                </div>
-                <div className='ml-4'>
-                  <h3 className='text-base font-bold text-purple-400 2xl:text-2xl'>
-                    {card.title}
-                  </h3>
-                  <p className='text-sm text-purple-400 2xl:text-base'>
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      <OurCleaningServices />
     </section>
   );
 };

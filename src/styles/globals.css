@@ -10,6 +10,7 @@
   --color-purple-400: var(--Darkest-Purple, #362287);
   --color-purple-500: var(--Main-Purple, #9393f9);
   --color-purple-600: rgba(54, 34, 135, 0.3);
+  --color-purple-700: rgba(242, 242, 255, 1);
 
   /* Blue */
   --color-blue-400: var(--Universal-White, #6cf);

@@ -87,15 +87,15 @@ const AddOnServices = () => {
       <h2 className='mt-6 text-4xl font-bold text-purple-400'>
         Add-On Services
       </h2>
-      <p className='mt-2 text-purple-500'>
+      <p className='mb-10 mt-2 text-purple-500'>
         Here are some additional services that you can add to your residential
         cleaning package <br /> for a fully customized cleaning experience.
       </p>
-      <div className='anime grid grid-cols-3 content-center items-center justify-center gap-8 2xl:grid-cols-4'>
+      <div className='anime grid grid-cols-3 content-center items-center justify-center gap-y-8 2xl:grid-cols-4 2xl:gap-8'>
         {AddOnServicesData.map((item, index) => (
           <div
             key={index}
-            className='w-_308 h-_350 px-_11 pt-_11 rounded-_32 m-auto mt-10 flex flex-col items-center bg-gray-400'
+            className='w-_308 h-_350 px-_11 pt-_11 rounded-_32 m-auto flex flex-col items-center bg-gray-400'
           >
             <div className='w-_285 h-_128 rounded-_25 relative  overflow-hidden'>
               <Image src={item.image} alt={item.title} fill />
