@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { CleaningVariety, ShowCase } from '@/components';
+import {
+  CleaningVariety,
+  OurCommercialCleanning,
+  ShowCase,
+} from '@/components';
 
 // Showcase
 const headText = `Transform your workplace into a "spotless oasis" of productivity with Tuesday Cleaning.`;
@@ -32,6 +36,7 @@ const CommercialCleaning = () => {
         subTitle={subTitle}
         images={images}
       />
+      <OurCommercialCleanning />
     </div>
   );
 };
