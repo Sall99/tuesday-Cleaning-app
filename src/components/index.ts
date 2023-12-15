@@ -1,6 +1,7 @@
 import CleaningVariety from './cleaning-variety';
 import ImageSlider from './image-slider';
 import Input from './inputs';
+import { JanitorialSupplies } from './janitorial-supplies';
 import NavBar from './navbar';
 import OurCleaningServices from './our-cleaning-services';
 import OurCommercialCleanning from './our-commercial-cleaning';
@@ -13,6 +14,7 @@ export {
   CleaningVariety,
   ImageSlider,
   Input,
+  JanitorialSupplies,
   NavBar,
   OurCleaningServices,
   OurCommercialCleanning,
