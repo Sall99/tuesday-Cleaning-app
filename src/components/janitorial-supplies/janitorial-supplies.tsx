@@ -36,7 +36,7 @@ export const JanitorialSupplies = () => {
         <div className='ml-_170 mt-_70 flex flex-col gap-8'>
           {cardData.map((card, index) => (
             <div key={index}>
-              <div className='w-_608  2xl:w-_696 rounded-_32 card pt-_34 flex items-center gap-4 bg-gray-400 pl-10 pr-9 2xl:gap-7'>
+              <div className='w-_608  2xl:w-_696 rounded-_32 card pt-_34 flex items-center gap-4 bg-gray-400 pb-5 pl-10 pr-9 2xl:gap-7'>
                 <div>
                   <h3 className='text-base font-bold text-purple-400 2xl:text-2xl'>
                     {card.title}
