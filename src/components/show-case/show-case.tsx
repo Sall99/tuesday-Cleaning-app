@@ -30,7 +30,7 @@ const ShowCase: FC<ShowCaseProps> = ({
   const [before, after] = headTextWithPlaceHolder.split(placeHolderHolder);
 
   return (
-    <section className='px-_150 2xl:px-_200 3xl:pr-_340  pb-_72 anime bg-purple-400 pt-16 text-white'>
+    <section className='px-_50 xxl:px-_150 2xl:px-_200 3xl:pr-_340  pb-_72 anime bg-purple-400 pt-16 text-white'>
       <div className='flex justify-between gap-8'>
         <div className='flex-1'>
           {' '}
@@ -49,7 +49,7 @@ const ShowCase: FC<ShowCaseProps> = ({
           <BookNow />
         </div>
 
-        <div className='relative'>
+        <div className='relative hidden xl:block'>
           <div className='show-yellow-rectangle'></div>
           <div className={cn('w-_547 h-_594 relative z-10')}>
             <Image src={imageSrc} alt='show case image' fill priority />

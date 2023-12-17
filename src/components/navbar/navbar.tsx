@@ -29,7 +29,7 @@ export const NavBar = () => {
         <Image src='/svg/Logo.svg' alt='logo' width={174.249} height={64} />
       </Link>
 
-      <ul className='gap-_30 flex items-center'>
+      <ul className='gap-_30 hidden items-center xl:flex'>
         {navLinks.map(({ href, icon, color, name }) => (
           <li key={name}>
             <Link
